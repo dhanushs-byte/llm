@@ -1,0 +1,36 @@
+{
+    "safeguards": [
+        {
+            "name": "Verify recent information",
+            "description": "Use trusted, up-to-date sources and record retrieval dates."
+        },
+        {
+            "name": "Prevent hallucinations",
+            "description": "Require supporting evidence and allow 'I don't know'."
+        },
+        {
+            "name": "Manage context limits",
+            "description": "Chunk long documents and retrieve relevant passages with RAG."
+        },
+        {
+            "name": "Validate calculations",
+            "description": "Use Python or a deterministic calculation engine for arithmetic."
+        },
+        {
+            "name": "Human review and testing",
+            "description": "Require human approval for high-impact decisions and test regularly."
+        }
+    ],
+    "bonus_experiments": [
+        {
+            "Temperature": 0,
+            "Prompt": "Summarize this paper, including methodology, findings, and DOI: \"Quantum-Aware Neural Alignment for Universal Reasoning\", by Dr. Elena Markov and Dr. James Whitmore, published in Nature AI Research in 2025. If you cannot verify that this paper exists, say 'I don't know'. Do not invent any details.",
+            "Observation": "Test with an LLM interface that exposes temperature. Check consistency and unsupported claims."
+        },
+        {
+            "Temperature": 1.0,
+            "Prompt": "Summarize this paper, including methodology, findings, and DOI: \"Quantum-Aware Neural Alignment for Universal Reasoning\", by Dr. Elena Markov and Dr. James Whitmore, published in Nature AI Research in 2025. If you cannot verify that this paper exists, say 'I don't know'. Do not invent any details.",
+            "Observation": "Repeat the same prompt and compare variation in the response. Higher temperature does not guarantee hallucination."
+        }
+    ]
+}

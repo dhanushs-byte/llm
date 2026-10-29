@@ -1,0 +1,17 @@
+﻿Experiment,Prompt,Response,Expected Answer,Observation
+Knowledge Cutoff,"Who won the most recent Nobel Prize in Physics announced in 2026? Give the winner, discovery, and announcement date. If unsure, say so instead of guessing.","I cannot confirm the 2026 Nobel Prize in Physics winner without checking a current, reliable source.","A verified answer from the official Nobel Prize website, or an explicit admission of uncertainty.",Recent events require up-to-date sources. Verify at https://www.nobelprize.org/prizes/physics/
+Hallucination - Without Safeguard,"Summarize this paper, including methodology, findings, and DOI: ""Quantum-Aware Neural Alignment for Universal Reasoning"", by Dr. Elena Markov and Dr. James Whitmore, published in Nature AI Research in 2025.","[Sample response] The model may invent a methodology, findings, authorship details, or a DOI. Record the actual response from your chosen LLM.",The model should not present unverified publication details as facts.,Check whether the paper and DOI actually exist.
+Hallucination - With Safeguard,"Summarize this paper, including methodology, findings, and DOI: ""Quantum-Aware Neural Alignment for Universal Reasoning"", by Dr. Elena Markov and Dr. James Whitmore, published in Nature AI Research in 2025. If you cannot verify that this paper exists, say 'I don't know'. Do not invent any details.","[Sample response] I cannot verify that this paper exists, so I don't know its methodology, findings, or DOI.",An honest statement of uncertainty when the reference cannot be verified.,Compare the actual model responses from both tests.
+Context Length,What is the internal project code mentioned in the report? Return only the code.,PROJECT-ORCHID-7294,PROJECT-ORCHID-7294,The offline check confirms that the fact exists in the text. Test an actual LLM with increasingly long documents to assess its retrieval ability.
+Reasoning - Arithmetic,"A shop has 240 products. It sells 25% in the morning, then 20% of the remaining products in the afternoon. How many products remain? Show your calculations.","Morning sold: 60
+After morning: 180
+Afternoon sold: 36
+Remaining: 144",144 products,"Verified using Python arithmetic. This checks the calculation, not an actual LLM's reasoning."
+Reasoning - Logic Puzzle,"Three boxes are labelled Apples, Oranges, and Mixed. Every label is incorrect. Pick one fruit from one box. How can all three boxes be labelled correctly?","
+1. Pick one fruit from the box labelled Mixed.
+2. Because every label is wrong, this box cannot contain a mixture.
+3. If you pick an apple, that box contains only apples; if you pick
+   an orange, it contains only oranges.
+4. Use the remaining incorrect labels and elimination to identify
+   the other two boxes.
+","Pick from the box labelled Mixed, then use the fruit and the incorrect-label constraint to identify all boxes.",Check the deductions against all three labels.
